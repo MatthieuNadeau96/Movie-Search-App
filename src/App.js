@@ -9,6 +9,9 @@ class App extends Component {
     movieList: []
   }
 
+  // TODO: add a "more info" button feature that will use this url :
+  // https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&query=alien
+
   handleSubmit = async (e) => {
     e.preventDefault();
     const movieName = e.target.elements.movieName.value;
