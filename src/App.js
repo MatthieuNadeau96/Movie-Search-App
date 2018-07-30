@@ -43,12 +43,14 @@ class App extends Component {
             this.state.movieList.length > 0 ? this.state.movieList.map(movie => {
               return (
 
-                  <div key={movie.id}>
-                    <img className="poster" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="poster"></img>
-                    <h3 className="title">{movie.title}</h3>
-                    <p className="release_date">{movie.release_date}</p>
-                    <p className="vote_average">{movie.vote_average} / 10</p>
-                    <p className="overview">{movie.overview}</p>
+                  <div className="card" key={movie.id}>
+                  <img className="poster" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="poster"></img>
+                    <div className="info">
+                      <h3 className="title">{movie.title}</h3>
+                      <p className="release_date">{movie.release_date}</p>
+                      <p className="overview">{movie.overview}</p>
+                      <p className="vote_average">{movie.vote_average} / 10</p>
+                    </div>
                   </div>
 
               )

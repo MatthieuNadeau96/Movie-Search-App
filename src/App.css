@@ -1,13 +1,68 @@
 .App {
   text-align: center;
+  width: 100%;
+  background: #fff;
+  position: relative;
+  padding: 25px;
+  margin: 25px 0;
 }
 
+h1 {
+  font-size: 4em;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+input {
+  height: 60px;
+  padding: 5px 0;
+  font-size: 1.5em;
+  margin: 20px 0;
+  outline: none;
+  width: 100%;
+}
+
+*, *:before, *:after {
+  font-size: 100%;
+  box-sizing: inherit;
+}
 
 .List {
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: (2, 1fr);
+  text-align: left;
   background: lightgrey;
+  margin: 15px 0;
+  padding: 5px;
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  grid-column: 2;
+  margin: 20px;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.overview {
 }
 
 .poster {
-  height: 150px;
-  width: 100px;
+  grid-column: 1;
+  flaot: left;
+  width: 214px;
+  height: 320px;
+  margin: auto 0;
 }
