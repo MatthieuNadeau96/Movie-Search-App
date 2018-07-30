@@ -23,7 +23,7 @@ class App extends Component {
         title: `${movieResults.title}`,
         overview: `${movieResults.overview}`,
         vote_average: `${movieResults.vote_average}`,
-        release_date: `${movieResults.release_date}`,
+        release_date: `${movieResults.release_date}`.slice(0, 4),
         poster_path: `${movieResults.poster_path}`
 
       }

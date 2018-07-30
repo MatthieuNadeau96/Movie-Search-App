@@ -34,6 +34,7 @@ input {
 .card {
   display: grid;
   grid-template-columns: (2, 1fr);
+
   text-align: left;
   background: lightgrey;
   margin: 15px 0;
@@ -44,16 +45,22 @@ input {
 }
 
 .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: inline-block;
   grid-column: 2;
   margin: 20px;
 }
 
 .title {
+
   font-size: 2em;
   font-weight: 900;
+}
+
+.release_date {
+  font-size: 1.3em;
+}
+
+.vote_average {
 }
 
 .overview {
