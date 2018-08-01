@@ -6,13 +6,14 @@ const API_KEY = 'c6396876f6d8074ed2cd825b08fa8460';
 class App extends Component {
 
   state = {
-    movieList: []
+    movieList: [],
+    detailedList: []
   }
 
   // TODO: add a "more info" button feature that will use this url :
   // https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&query=alien
 
-  handleSubmit = async (e) => {
+  getMovieList = async (e) => {
     e.preventDefault();
     const movieName = e.target.elements.movieName.value;
     const api_call = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieName}`);
@@ -34,11 +35,31 @@ class App extends Component {
     })
   }
 
+  getMoreInfo = async (e) => {
+    const id = e;
+    const api_call = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`);
+    const data = await api_call.json();
+    console.log(data);
+    const detailedList = Object.keys(data).map(detailedResults => (
+      {
+        budget: `${detailedResults.budget}`,
+        revenue: `${detailedResults.revenue}`,
+        genres: `${detailedResults.genres}`,
+        poster_path: `${detailedResults.poster_path}`,
+        runtime: `${detailedResults.runtime}`,
+
+      }
+    ))
+    this.setState({
+      detailedList
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Movie Search</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.getMovieList}>
           <input type="text" placeholder="Enter a Movie Title..." name="movieName"/>
         </form>
         <div className="List">
@@ -53,6 +74,7 @@ class App extends Component {
                       <p className="release_date">{movie.release_date}</p>
                       <p className="overview">{movie.overview}</p>
                       <p className="vote_average">{movie.vote_average} / 10</p>
+                      <button className="info_btn" onClick={() => this.getMoreInfo(movie.id)}>More Info</button>
                     </div>
                   </div>
 
