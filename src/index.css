@@ -9,7 +9,7 @@ html {
   box-sizing: border-box;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   body {
     width: 100%;
   }
