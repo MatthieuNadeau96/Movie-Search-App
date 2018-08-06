@@ -50,19 +50,24 @@ input {
 }
 
 .title {
-
   font-size: 2em;
   font-weight: 900;
 }
 
 .release_date {
-  font-size: 1.3em;
+  font-size: 1.1em;
+  padding: 10px 0;
+  color: #444;
+  padding-bottom: 20px;
 }
 
 .vote_average {
 }
 
 .overview {
+  letter-spacing: 1px;
+  font-size: 1em;
+  color: #222;
 }
 
 .poster {

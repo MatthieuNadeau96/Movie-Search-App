@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 // import List from './components/List';
-import { Link } from 'react-router-dom';
 import { CircleArrow as ScrollUpButton } from 'react-scroll-up-button';
 
 const API_KEY = 'c6396876f6d8074ed2cd825b08fa8460';
@@ -79,9 +78,7 @@ class App extends Component {
                   <p className="release_date">{movie.release_date}</p>
                   <p className="overview">{movie.overview}</p>
                   <p className="vote_average">{movie.vote_average} / 10</p>
-                  <button className="info_btn" onClick={() => this.getMoreInfo(movie.id)}>
-                    <Link to="/details">More Info</Link>
-                  </button>
+
                 </div>
               </div>
             )
