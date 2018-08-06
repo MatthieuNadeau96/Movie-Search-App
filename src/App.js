@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 // import List from './components/List';
 import { Link } from 'react-router-dom';
+import ScrollUpButton from 'react-scroll-up-button';
 
 const API_KEY = 'c6396876f6d8074ed2cd825b08fa8460';
 
@@ -87,6 +88,7 @@ class App extends Component {
           }) : null
         }
       </div>
+      <ScrollUpButton/>
     </div>
     );
   }
